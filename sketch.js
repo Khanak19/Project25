@@ -13,7 +13,6 @@ var playerArrows = [];
 var arrow;
 
 function preload(){
-  backgroundImg = loadImage("assets/background.gif")
 }
 
 
@@ -25,35 +24,14 @@ function setup() {
 
   playerBase = new PlayerBase(300, random(450, height - 300), 180, 150);
   player = new Player(285, playerBase.body.position.y - 153, 50, 180);
-  playerArcher = new PlayerArcher(
-    340,
-    playerBase.body.position.y - 180,
-    120,
-    120
-  );
+  playerArcher = new PlayerArcher( 340, playerBase.body.position.y - 180,120,120);
 
-  computerBase = new ComputerBase(
-    width - 300,
-    random(450, height - 300),
-    180,
-    150
-  );
-  computer = new Computer(
-    width - 280,
-    computerBase.body.position.y - 153,
-    50,
-    180
-  );
-  computerArcher = new ComputerArcher(
-    width - 340,
-    computerBase.body.position.y - 180,
-    120,
-    120
-  );
+  computerBase = new ComputerBase(width - 300,random(450, height - 300),180,150);
+  computer = new Computer( width - 280, computerBase.body.position.y - 153, 50, 180);
+  computerArcher = new ComputerArcher( width - 340,  computerBase.body.position.y - 180,120,120);
 }
 
 function draw() {
-  background(backgroundImg);
 
   Engine.update(engine);
 
@@ -78,6 +56,7 @@ function draw() {
  for (var i = 0; i < playerArrows.length; i++) {
   showArrows(i, playerArrows);
 }
+
 }
 
 function keyPressed() {
