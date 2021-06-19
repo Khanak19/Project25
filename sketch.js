@@ -13,6 +13,7 @@ var playerArrows = [];
 var arrow;
 
 function preload(){
+  backgroundImg= loadImage("background.gif")
 }
 
 
@@ -32,7 +33,7 @@ function setup() {
 }
 
 function draw() {
-
+background(backgroundImg)
   Engine.update(engine);
 
   // Title
